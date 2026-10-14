@@ -5,6 +5,6 @@
 #include <string>
 #include <vector>
 
-std::optional<AccelSample> parseLine(const std::string& line);
+std::optional<AccelSample> parseLine(const std::string &line);
 
-std::vector<AccelSample> parseLogFile(const std::string& path);
+std::vector<AccelSample> parseLogFile(const std::string &path);
