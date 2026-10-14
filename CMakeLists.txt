@@ -8,6 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(attitude_estimator
     src/main.cpp
     src/AttitudeEstimator.cpp
+    src/LogParser.cpp
 )
 
 target_include_directories(attitude_estimator PRIVATE include)
