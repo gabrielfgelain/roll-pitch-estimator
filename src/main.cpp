@@ -1,16 +1,21 @@
+#include "LogParser.h"
+
+#include <exception>
 #include <iostream>
-#include "AttitudeEstimator.h"
-
-
+#include <vector>
 
 int main()
 {
-    AccelSample sample {54741, 434, 12, -898};
-    const Attitude attitude = estimateAttitude(sample);
-
-    std::cout << "roll = " << attitude.roll_deg << " deg\n";
-    std::cout << "pitch = " << attitude.pitch_deg << " deg\n";
+    try
+    {
+        const std::vector<AccelSample> samples = parseLogFile("attitude_exam.log");
+        std::cout << samples.size() << " samples read\n";
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "Error: " << e.what() << '\n';
+        return 1;
+    }
 
     return 0;
 }
-
