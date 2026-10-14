@@ -13,13 +13,13 @@ namespace
     constexpr int max_warnings = 10;
 
     // Blank lines (e.g. an empty last line, or a lone '\r' from CRLF files) are not errors.
-    bool isBlank(const std::string& line)
+    bool isBlank(const std::string &line)
     {
         return line.find_first_not_of(" \t\r") == std::string::npos;
     }
 }
 
-std::optional<AccelSample> parseLine(const std::string& line)
+std::optional<AccelSample> parseLine(const std::string &line)
 {
     std::istringstream iss(line);
 
@@ -50,7 +50,7 @@ std::optional<AccelSample> parseLine(const std::string& line)
     return AccelSample{static_cast<std::uint32_t>(time_stamp_ms), x, y, z};
 }
 
-std::vector<AccelSample> parseLogFile(const std::string& path)
+std::vector<AccelSample> parseLogFile(const std::string &path)
 {
     std::ifstream file(path);
     if (!file.is_open())

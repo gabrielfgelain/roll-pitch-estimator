@@ -11,7 +11,7 @@ namespace
     }
 }
 
-Attitude estimateAttitude(const AccelSample& sample)
+Attitude estimateAttitude(const AccelSample &sample)
 {
     const double gx = static_cast<double>(sample.accel_x_mg);
     const double gy = static_cast<double>(sample.accel_y_mg);
